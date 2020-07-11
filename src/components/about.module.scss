@@ -1,0 +1,56 @@
+.my_image {
+    width: auto;
+    height: 100%;
+}
+
+.my_image_container {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+    
+}
+
+.center_image {
+    display: flex;
+    justify-content: center;
+  
+    
+}
+
+.container {
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.msg_container {
+    padding-top: 1rem;
+  
+}
+
+.iconButton {
+    background-color: white;
+    border: white;
+}
+
+.icon_center_align {
+    display: flex;
+    justify-content: center;
+}
+
+.about_container {
+    padding-left: 1rem
+
+
+}
+
+
+
+

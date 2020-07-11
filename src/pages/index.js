@@ -1,22 +1,56 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
+import TextLoop from 'react-text-loop'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import styles from './index.module.scss'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import About from '../components/about'
+import Timeline from '../components/timeline'
+import Projects from '../components/projects'
+import Skills from '../components/skills'
 
-export default IndexPage
+const Home = (props) => {
+
+    return (
+        <Layout>
+            <BackgroundImage 
+                className={styles.backgroundImage}
+                fluid={props.data.indexImage.childImageSharp.fluid}>
+                <div className={styles.quotes_container}>
+                   <h1 className={styles.quotes_style}>
+                       <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
+                           <span>Turning ideas into Reality!</span>
+                           <span>Prolific and Productive</span>
+                       </TextLoop>
+                   </h1>
+                    <h3 className={styles.paragraph_style}>Hi there! Welcome to my portfolio website</h3>
+                </div>
+            </BackgroundImage>
+
+            <About/>
+            <Timeline />
+            <Projects />
+            <Skills />
+            
+            
+            
+         
+        </Layout>
+    );
+}
+
+export default Home
+
+export const image_data = graphql`
+    query {
+        indexImage: file(relativePath: { eq: "laptop-wallpaper.jpg" }) {
+            childImageSharp {
+                fluid(quality: 90, maxWidth: 1920) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+    }
+`;

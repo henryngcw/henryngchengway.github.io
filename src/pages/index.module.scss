@@ -1,0 +1,38 @@
+.quotes_style {
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.quotes_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    // filter: blur(2px);
+    // -webkit-filter: blur(2px);
+
+}
+
+.paragraph_style {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+}
+
