@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+     Button
   } from 'reactstrap';
 import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from 'react-icons/ai'
 import { IconContext } from 'react-icons'

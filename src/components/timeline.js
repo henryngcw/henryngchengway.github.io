@@ -9,10 +9,6 @@ const Timeline_Experience = () => {
 
     const experience_regex_md = "/posts/experience/.*\\.md$/"
 
-    const random_hex_color_code = () => {
-        let n = (Math.random() * 0xfffff * 1000000).toString(16);
-        return '#' + n.slice(0, 6);
-      };
 
     const data = useStaticQuery(graphql`
         query {
@@ -41,7 +37,7 @@ const Timeline_Experience = () => {
             <h1>Experiences</h1>
             <VerticalTimeline>
                 {data.allMarkdownRemark.edges.map((edge) => {
-                    const color = random_hex_color_code();
+                    const color = "#98ff98";
                     return (
                         <VerticalTimelineElement
                             className = "vertical-timeline-element--work"
