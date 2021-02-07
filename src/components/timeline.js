@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import '../styles/index.scss'
-import { useStaticQuery, graphql } from 'gatsby'
-import { FaReact } from 'react-icons/fa'
+import '../styles/index.scss';
+import { useStaticQuery, graphql } from 'gatsby';
+import { FaReact, FaJava } from 'react-icons/fa';
+import styles from './timeline.module.scss';
 
 const Timeline_Experience = () => {
 
@@ -12,7 +13,7 @@ const Timeline_Experience = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark(filter: { frontmatter : { type: { eq: "experience" }}}) {
+            allMarkdownRemark(filter: { frontmatter : { type: { eq: "experience" }}}, sort: {order: DESC, fields: frontmatter___starting_date}) {
                 edges {
                     node {
                         frontmatter {
@@ -22,6 +23,7 @@ const Timeline_Experience = () => {
                             ending_date
                             company
                             months
+                            programming
                         }
                         internal {
                             content
@@ -31,6 +33,8 @@ const Timeline_Experience = () => {
             }
         }
     `)
+
+    
 
     return (
         <div>
@@ -45,11 +49,19 @@ const Timeline_Experience = () => {
                             contentArrowStyle={{ borderRight: `7px solid ${color}` }}
                             date={`${edge.node.frontmatter.starting_date} - ${edge.node.frontmatter.ending_date} \n (${edge.node.frontmatter.months})`}
                             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                            icon={<FaReact />}
+                            // icon={<FaReact />}
                         >
                             <h3 className="vertical-timeline-element-title">{edge.node.frontmatter.title}, {edge.node.frontmatter.position}</h3>
                             <h4 className="vertical-timeline-element-subtitle">{edge.node.frontmatter.company}</h4>
                             <p>{edge.node.internal.content}</p>
+                      
+                            <div className={styles.icon_container}>
+                                {edge.node.frontmatter.programming === "Java" ? <FaJava size="50" /> : 
+                                edge.node.frontmatter.programming === "React Native" ? <FaReact size="50"/> :
+                                null}
+                            </div>
+                       
+                           
                         </VerticalTimelineElement>
                     );
                 })}

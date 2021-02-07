@@ -30,7 +30,12 @@ const Projects = () => {
         <div>
             <h1>Personal Projects</h1>
             <div className={styles.div_container}>
-                <Card className={styles.cardContainer}>
+
+                
+                {/* can be used as reference for incoming projects */}
+
+
+                {/* <Card className={styles.cardContainer}>
                     <div className={styles.container}>
                         <Img fixed={image_data.placeholderImage.childImageSharp.fixed}/>
                         <CardBody className={styles.CardBody}>
@@ -45,7 +50,7 @@ const Projects = () => {
                             </Button>
                         </CardBody>
                     </div>
-                </Card>
+                </Card> */}
             </div>
         </div>
         

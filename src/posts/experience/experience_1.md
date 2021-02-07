@@ -5,7 +5,7 @@ company: Adnexio
 starting_date: 2/12/2019
 ending_date: 28/2/2020
 months: 3 months
-programmming: React Native
+programming: React Native
 type: experience
 ---
 

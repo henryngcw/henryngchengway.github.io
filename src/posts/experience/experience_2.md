@@ -1,6 +1,6 @@
 ---
 title: Mobile App Developer
-position: Part-Time
+position: Freelance
 company: Invoke Space 
 starting_date: 20/4/2020
 ending_date: 20/5/2020
