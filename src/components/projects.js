@@ -5,7 +5,7 @@ import {
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import FadeIn from 'react-fade-in'
 
 import '../styles/index.scss'
@@ -13,17 +13,31 @@ import styles from './project.module.scss'
 
 const Projects = () => {
 
-    const image_data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         query {
-            placeholderImage: file(relativePath: { eq: "snapsolved.png" }) {
-                childImageSharp {
-                    fixed(width: 300, height: 300) {
-                        ...GatsbyImageSharpFixed
+            allMarkdownRemark(filter: { frontmatter : { type: { eq: "project" }}}) {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            description
+                            starting_date
+                            ending_date
+                            own
+                            picture
+        
+                        }
+                        internal {
+                            content
+                        }
                     }
                 }
             }
+            
         }
     `)
+
+   
     
     return (
         
@@ -34,23 +48,27 @@ const Projects = () => {
                 
                 {/* can be used as reference for incoming projects */}
 
-
-                {/* <Card className={styles.cardContainer}>
-                    <div className={styles.container}>
-                        <Img fixed={image_data.placeholderImage.childImageSharp.fixed}/>
-                        <CardBody className={styles.CardBody}>
-                            <CardTitle className={styles.cardTitle}>SnapSolved</CardTitle>
-                            <CardText className={styles.cardText}>Snap Solved is a question-and-answer, educational platform developed by students for students. 
-                                It aims to connect homework-bogged students and experienced tutors to facilitate learning in various subjects from primary to secondary school. 
-                                In this app, students who are facing homework troubles can ask for help from experienced tutors with 3 simple steps</CardText>
-                            <Button>
-                                <div className={styles.buttonContainer}>
-                                    <a className={styles.link}href="https://play.google.com/store/apps/details?id=com.snapsolved">Download via Google Play Store</a>
-                                </div>
-                            </Button>
-                        </CardBody>
-                    </div>
-                </Card> */}
+                {data.allMarkdownRemark.edges.map((edge) => {
+                    const image_location = "../images/" + `${edge.node.frontmatter.picture}`
+                    return(
+                        <Card className={styles.cardContainer}>
+                            <div className={styles.container}>
+                                <StaticImage src={image_location} />
+                                <CardBody className={styles.CardBody}>
+                                    <CardTitle className={styles.cardTitle}>{edge.node.frontmatter.title}</CardTitle>
+                                    <CardText className={styles.cardText}>{edge.node.frontmatter.description}</CardText>
+                                    {/* <Button>
+                                        <div className={styles.buttonContainer}>
+                                            <a className={styles.link}href="https://play.google.com/store/apps/details?id=com.snapsolved">Download via Google Play Store</a>
+                                        </div>
+                                    </Button> */}
+                                    <CardText className={styles.contributionPeriod}>Contribution Period: {edge.node.frontmatter.starting_date} - {edge.node.frontmatter.ending_date}</CardText>
+                                </CardBody>
+                            </div>
+                        </Card>
+                    );
+                })}
+               
             </div>
         </div>
         

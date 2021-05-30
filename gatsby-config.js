@@ -11,6 +11,9 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-remark`,
     `gatsby-background-image`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,8 +35,8 @@ module.exports = {
         path: `${__dirname}/src/posts/projects`,
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    
+    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

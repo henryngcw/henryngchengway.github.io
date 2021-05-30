@@ -6,7 +6,7 @@ import {
 import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import styles from './about.module.scss'
 
 import '../styles/index.scss'
@@ -31,9 +31,7 @@ const About = () => {
         <div className={styles.container}>
             <div className={styles.center_image}>
                 <div className={styles.my_image_container}>
-                    <Img 
-                        fluid={my_image.placeholderImage.childImageSharp.fluid}
-                        className={styles.my_image} />
+                    <StaticImage src="../images/myself.jpg" width={200} height={200} />
                 </div>
             </div>
 
