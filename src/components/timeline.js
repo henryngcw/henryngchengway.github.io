@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../styles/index.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FaReact, FaJava } from 'react-icons/fa';
-import styles from './timeline.module.scss';
+import * as styles from './timeline.module.scss';
 
 const Timeline_Experience = () => {
 

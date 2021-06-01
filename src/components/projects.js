@@ -5,11 +5,11 @@ import {
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import FadeIn from 'react-fade-in'
 
 import '../styles/index.scss'
-import styles from './project.module.scss'
+import * as styles from './project.module.scss'
 
 const Projects = () => {
 
@@ -24,7 +24,14 @@ const Projects = () => {
                             starting_date
                             ending_date
                             own
-                            picture
+                            Picture {
+                                childImageSharp {
+                                    gatsbyImageData(
+                                        width: 300
+                                       
+                                    )
+                                }
+                            }
         
                         }
                         internal {
@@ -49,11 +56,11 @@ const Projects = () => {
                 {/* can be used as reference for incoming projects */}
 
                 {data.allMarkdownRemark.edges.map((edge) => {
-                    const image_location = "../images/" + `${edge.node.frontmatter.picture}`
+                   
                     return(
                         <Card className={styles.cardContainer}>
                             <div className={styles.container}>
-                                <StaticImage src={image_location} />
+                                <GatsbyImage image={getImage(edge.node.frontmatter.Picture)}  alt="logo" />
                                 <CardBody className={styles.CardBody}>
                                     <CardTitle className={styles.cardTitle}>{edge.node.frontmatter.title}</CardTitle>
                                     <CardText className={styles.cardText}>{edge.node.frontmatter.description}</CardText>
@@ -62,6 +69,8 @@ const Projects = () => {
                                             <a className={styles.link}href="https://play.google.com/store/apps/details?id=com.snapsolved">Download via Google Play Store</a>
                                         </div>
                                     </Button> */}
+                                   
+                                    <CardText className={styles.cardText}>{edge.node.internal.content}</CardText>
                                     <CardText className={styles.contributionPeriod}>Contribution Period: {edge.node.frontmatter.starting_date} - {edge.node.frontmatter.ending_date}</CardText>
                                 </CardBody>
                             </div>

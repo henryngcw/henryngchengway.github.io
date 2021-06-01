@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image'
 import TextLoop from 'react-text-loop'
 
 import Layout from '../components/layout'
-import styles from './index.module.scss'
+import * as styles from './index.module.scss'
 
 import About from '../components/about'
 import Timeline from '../components/timeline'

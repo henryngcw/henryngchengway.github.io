@@ -3,11 +3,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 import {
      Button
   } from 'reactstrap';
-import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from 'react-icons/ai'
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 
 import { StaticImage } from 'gatsby-plugin-image'
-import styles from './about.module.scss'
+import * as styles from './about.module.scss'
 
 import '../styles/index.scss'
 
@@ -31,7 +31,7 @@ const About = () => {
         <div className={styles.container}>
             <div className={styles.center_image}>
                 <div className={styles.my_image_container}>
-                    <StaticImage src="../images/myself.jpg" width={200} height={200} />
+                    <StaticImage src="../images/myself.jpg" width={300} height={300} transformOptions={{ cropFocus: 'center'}} layout="constrained" />
                 </div>
             </div>
 
