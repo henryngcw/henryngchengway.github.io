@@ -13,32 +13,27 @@ import Skills from '../components/skills'
 
 const Home = (props) => {
 
-    return (
-        <Layout>
-            <BackgroundImage 
-                className={styles.backgroundImage}
-                fluid={props.data.indexImage.childImageSharp.fluid}>
-                <div className={styles.quotes_container}>
-                   <h1 className={styles.quotes_style}>
-                       <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
-                           <span>Turning ideas into Reality!</span>
-                           <span>Prolific and Productive</span>
-                       </TextLoop>
-                   </h1>
-                    <h3 className={styles.paragraph_style}>Hi there! Welcome to my portfolio website</h3>
-                </div>
-            </BackgroundImage>
-
-            <About/>
-            <Timeline />
-            <Projects />
-            <Skills />
-            
-            
-            
-         
-        </Layout>
-    );
+	return (
+		<Layout>
+			{/* <BackgroundImage
+				className={styles.backgroundImage}
+				fluid={props.data.indexImage.childImageSharp.fluid}>
+				<div className={styles.quotes_container}>
+					<h1 className={styles.quotes_style}>
+						<TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
+							<span>Turning ideas into Reality!</span>
+							<span>Prolific and Productive</span>
+						</TextLoop>
+					</h1>
+					<h3 className={styles.paragraph_style}>Hi there! Welcome to my portfolio website</h3>
+				</div>
+			</BackgroundImage> */}
+			<About />
+			<Timeline />
+			<Projects />
+			<Skills />
+		</Layout>
+	);
 }
 
 export default Home

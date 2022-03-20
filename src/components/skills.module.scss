@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	border-radius: 30px;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.cardBody {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cardTitle {
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.icon {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}

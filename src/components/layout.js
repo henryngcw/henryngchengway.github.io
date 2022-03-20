@@ -4,23 +4,23 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
 import React from "react"
+
 import Header from "./header"
 import Footer from './footer'
 
-
-
+import * as styles from './layout.module.scss';
 
 const Layout = (props) => {
-  return (
-    <div>
-        <Header />
-        {props.children}
-        <Footer /> 
-    </div>
-  )
+	return (
+		<div>
+			<Header />
+			<div className={styles.container}>
+				{props.children}
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
-
-export default Layout
+export default Layout;

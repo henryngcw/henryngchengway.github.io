@@ -15,8 +15,8 @@ a {
 }
 
 h1 {
-  padding-top: 35px;
-  padding-bottom: 35px;
+  margin-top: 35px;
+  margin-bottom: 35px;
   text-align: center;
 }
 
@@ -50,6 +50,12 @@ ul {
   list-style: none; // this removes the dot point for the list
   padding-right: 5rem;
 
+}
+
+mark {
+	border-radius: 0px;
+	background-color: black;
+	color: white;
 }
 
 

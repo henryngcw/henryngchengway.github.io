@@ -1,28 +1,26 @@
 .container {
-    padding: 3rem;
-    width: 100%;
+	margin: 2rem;
     display: flex;
     flex-direction: row;
 
-  
-    .Img {
-        width: 100%;
-        vertical-align: middle;
+    .img {
+        max-width: 100%;
+		height: auto;
     }
 
-    .CardBody {
-        width: 70%;
-        padding-left: 2.5rem;
+    .cardBody {
+        width: 100%;
 
     }
     
     .cardTitle {
-        font-size: 40px;
-        font-weight: bold;
+        font-size: 30px;
+        font-weight: bolder;
 
     }
 
     .cardText {
+		font-size: 14px;
         text-align: left;
     }
 
@@ -37,15 +35,16 @@
     }
 
     .contributionPeriod {
+		@extend .cardText;
         text-align: right;
-      
     }
 }
 
 .cardContainer {
-    width: 90%;
+    display: flex;
     border-radius: 1.5rem;
-    
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .div_container {
@@ -53,7 +52,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .link {
