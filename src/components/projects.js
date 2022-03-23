@@ -51,7 +51,7 @@ const Projects = () => {
 				{data.allMarkdownRemark.edges.map((edge) => {
 					return (
 						<Card className={styles.cardContainer}>
-							<GatsbyImage image={getImage(edge.node.frontmatter.Picture)} alt="logo" className={styles.img} />
+							<GatsbyImage image={getImage(edge.node.frontmatter.Picture)} alt="logo" layout="constrained" className={styles.img} />
 							<div className={styles.container}>
 								<CardBody className={styles.cardBody}>
 									<CardTitle className={styles.cardTitle}>{edge.node.frontmatter.title}</CardTitle>

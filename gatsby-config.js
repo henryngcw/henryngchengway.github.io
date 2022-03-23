@@ -35,18 +35,19 @@ module.exports = {
 				path: `${__dirname}/src/posts/projects`,
 			}
 		},
-		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
-				start_url: `/home`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
-				display: `minimal-ui`,
-				icon: `${__dirname}/src/icons/`
-			},
-		},
+		/* comment this out to avoid icon error, uncomment this if wanted to apply icons */
+		// {
+		// 	resolve: `gatsby-plugin-manifest`,
+		// 	options: {
+		// 		name: `gatsby-starter-default`,
+		// 		short_name: `starter`,
+		// 		start_url: `/home`,
+		// 		background_color: `#663399`,
+		// 		theme_color: `#663399`,
+		// 		display: `minimal-ui`,
+		// 		icon: `${__dirname}/src/icons/`
+		// 	},
+		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,
