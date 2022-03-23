@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[7],{223:function(e,t,a){"use strict";a.r(t);var l=a(7294),u=a(4019);a(3751);t.default=function(){return l.createElement(u.Z,null,l.createElement("h1",null,"Blog"))}}}]);
+//# sourceMappingURL=component---src-pages-blog-js-aaf63de725ded1b015f2.js.map
