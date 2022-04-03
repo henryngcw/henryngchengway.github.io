@@ -21,7 +21,7 @@ const Footer = () => {
 				{` `}
 				<a>{author_data.site.siteMetadata.author}</a>
 				{` `}
-				© {new Date().getFullYear()}
+				© 2020
 			</footer>
 		</div>
 	);

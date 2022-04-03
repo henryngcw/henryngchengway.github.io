@@ -1,6 +1,6 @@
 ---
 title: Electrocardiogram signal classification app
-description: Final Year Project
+label: Final Year Project
 type: project
 starting_date: March 2021
 ending_date: June 2021

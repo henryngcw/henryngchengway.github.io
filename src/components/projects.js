@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {
 	Card, CardImg, CardText, CardBody,
-	CardTitle, CardSubtitle, Button
+	CardTitle, CardSubtitle,
 } from 'reactstrap';
+import { IconButton, Chip } from '@mui/material';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { FaReact } from 'react-icons/fa';
+import { IoLogoGooglePlaystore } from 'react-icons/io';
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
-import '../styles/index.scss'
-import * as styles from './project.module.scss'
+import '../styles/index.scss';
+import * as styles from './project.module.scss';
 
 const Projects = () => {
 
@@ -19,7 +21,7 @@ const Projects = () => {
                     node {
                         frontmatter {
                             title
-                            description
+                            label
                             starting_date
                             ending_date
                             own
@@ -55,14 +57,14 @@ const Projects = () => {
 							<div className={styles.container}>
 								<CardBody className={styles.cardBody}>
 									<CardTitle className={styles.cardTitle}>{edge.node.frontmatter.title}</CardTitle>
-									<CardText className={styles.cardText}>{edge.node.frontmatter.description}</CardText>
-									{/* <Button>
-										<div className={styles.buttonContainer}>
-											<a className={styles.link} href="https://play.google.com/store/apps/details?id=com.snapsolved">Download via Google Play Store</a>
-										</div>
-									</Button> */}
+									<Chip color='info' label={edge.node.frontmatter.label} />
 									<CardText className={styles.cardText}>{edge.node.internal.content}</CardText>
-									<CardText className={styles.contributionPeriod}>Contribution Period: {edge.node.frontmatter.starting_date} - {edge.node.frontmatter.ending_date}</CardText>
+									{/* <IconButton>
+										<IoLogoGooglePlaystore />
+									</IconButton> */}
+									<div className={styles.date_container}>
+										<Chip color="success" label={`${edge.node.frontmatter.starting_date} - ${edge.node.frontmatter.ending_date}`} />
+									</div>
 								</CardBody>
 							</div>
 						</Card>

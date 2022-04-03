@@ -63,10 +63,10 @@ const About = () => {
 
 			<div className={styles.tagContainer}>
 				<Stack direction='column' spacing={1}>
-					<Chip color='primary' label='Monash University' />
-					<Chip color='primary' label='Sunway College' />
-					<Chip color='success' label='Monash University Foundation Year' />
-					<Chip color='success' label='C2001 - Bachelor of Computer Science' />
+					<Chip color='info' variant="outlined" label='Monash University' />
+					<Chip color='info' variant="outlined" label='Sunway College' />
+					<Chip color='success' variant="outlined" label='Monash University Foundation Year' />
+					<Chip color='success' variant="outlined" label='C2001 - Bachelor of Computer Science' />
 				</Stack>
 			</div>
 
