@@ -29,7 +29,14 @@ const About = () => {
 	return (
 		<div>
 			<div className={styles.center_image}>
-				<StaticImage className={styles.my_image_container} src="../images/myself.jpg" width={300} height={300} transformOptions={{ fit: 'cover', cropFocus: 'center' }} layout="fixed" />
+				<StaticImage
+					src="../images/myself.jpg"
+					width={300}
+					height={300}
+					transformOptions={{ fit: 'cover', cropFocus: 'center' }}
+					layout="fixed"
+					imgStyle={{ borderRadius: '50%', zoom: '50%' }}
+				/>
 			</div>
 
 			<div className={styles.msg_container}>

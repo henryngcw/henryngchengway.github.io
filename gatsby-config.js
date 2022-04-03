@@ -9,7 +9,6 @@ module.exports = {
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-catch-links`,
-		`gatsby-transformer-remark`,
 		`gatsby-background-image`,
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -17,6 +16,14 @@ module.exports = {
 				name: `images`,
 				path: `${__dirname}/src/images`,
 			}
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					`gatsby-remark-line-breaks`,
+				],
+			},
 		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
